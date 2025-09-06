@@ -772,8 +772,58 @@ nav{
 /*quinta parte*/
 
 #five{
-    
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
+
+#five img{
+    width: 40%;
+    border-radius: 15px;
+}
+
+#five article{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#five article h2{
+    font-size: 45px;
+    font-family: var(--texto_titulos);
+    color: var(--color_titulos);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#five article p{
+    color: var(--color_texto);
+    font-family: var(--texto_titulos);
+    font-size: 18px;
+    width: 80%;
+    text-align: center;
+}
+
+#five article a{
+    width: 60%;
+    background: var(--color_primari);
+    font-family: var(--text_textos);
+    padding: 8px 0;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+#five article a:hover{
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 40%);
+}
+
 
 
 
