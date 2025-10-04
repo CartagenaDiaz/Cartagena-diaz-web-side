@@ -8,6 +8,7 @@
     --color_primari:#1573ff;
     --color_texto:#707070;
     --colors_fondo:#f2f2f2;
+    --price-bg:#eef5ff;
 }
 
 *{
@@ -420,7 +421,7 @@ nav{
     gap: 20px;
 }
 
-#second h2{
+#second > h2{
     font-family: var(--texto_titulos);
     color: white;
     font-size: 50px;
@@ -446,11 +447,11 @@ nav{
 }
 
 #second article{
-    width: 70%;
-    height: 150px;
+    width: 80%;
+    height: 200px;
 }
 
-#second article ul{
+#second article > ul{
     width: 100%;
     height: 100%;
 
@@ -459,22 +460,160 @@ nav{
     flex-wrap: wrap;
     align-items: center;
     justify-content: start;
-    gap: 10px;
+    gap: 20px 10px;
 }
 
-#second article ul li{
+#second article > ul > li{
     width: 45%;
-    height: 15%;
     text-decoration: none;
-    color: white;
-    font-family: var(--text_textos);
-    font-size: 18px;
 
     display: flex;
     align-items: center;
-    justify-content: left;
-    gap: 5px;
+    justify-content: center;
 }
+
+#second article > ul > li > span{
+    color: white;
+    width: 10%;
+}
+
+
+#second article > ul > li > button{
+    all: unset;
+    cursor: pointer;
+    width: 90%;
+    color: white;
+    font-family: var(--text_textos);
+    font-size: 18px;
+    text-align: left;
+}
+
+/* diseño de precios */
+
+.price{background:var(--price-bg);padding:6px 8px;border-radius:8px;font-weight:700;display:inline-block}
+
+/* seccion del baner  */
+.baner:popover-open{
+    position: fixed;
+    margin: auto;
+    width: 60%;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+/* #six article div */
+.baner::backdrop{
+    background: rgba(0, 0, 0, 50%);
+    backdrop-filter: blur(5px);
+}
+
+/* #six article div */
+.baner > h2{
+    font-family: var(--texto_titulos);
+    font-size: 30px;
+    color: var(--color_titulos);
+    font-weight: 700;
+    text-align: center;
+}
+
+/* #six article div */
+
+.baner p{
+    width: 90%;
+    font-family: var(--text_textos);
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.baner a{
+    padding: 5px;
+    background: none;
+}
+
+/* #six article div */
+
+.baner ul{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+
+    max-height: 200px; /* 🔹 Ajusta la altura máxima visible */
+    overflow-y: auto;  /* 🔹 Activa scroll vertical */
+    padding-right: 10px; /* 🔹 Espacio para que no tape el scrollbar */
+    padding-left: 20px;  /* espacio para las viñetas */
+    list-style-type: disc; /* 🔹 Viñetas clásicas redondas */
+}
+
+/* #six article div */
+
+.baner ul li{
+    font-family: var(--text_textos);
+    color: var(--color_texto);
+    list-style: circle;
+    list-style-position: inside;
+}
+
+.baner ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+.baner ul::-webkit-scrollbar-thumb {
+    background: var(--color_primari);
+    border-radius: 10px;
+}
+
+.baner ul::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.baner > button{
+    all: unset;
+    cursor: pointer;
+    color: white;
+    font-family: var(--text_textos);
+    font-size: 16px;
+    text-align: center;
+    width: 20%;
+    padding: 8px 0;
+    background: var(--color_primari);
+    border-radius: 20px;
+    transition: all 0.5s;
+    
+}
+
+.baner button:hover{
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 40%);
+}
+
+.baner .d-requisitos{
+    width: 80%;
+    padding: 8px 0;
+    background: var(--color_primari);
+    font-family: var(--text_textos);
+    color: white;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.baner .d-requisitos:hover{
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 40%);
+}
+
 
 @media screen and (max-width:800px){
     #second article{
@@ -489,6 +628,15 @@ nav{
         width: 50%;
     }
 
+    .baner:popover-open{
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .baner ul {
+        max-height: 150px;
+    }
 }
 
 @media screen and (max-width:500px){
@@ -505,6 +653,15 @@ nav{
 
     #second a{
         width: 70%;
+    }
+
+    .baner p{
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .baner ul li{
+        font-size: 14px;
     }
 }
 
@@ -529,7 +686,7 @@ nav{
 }
 
 #thrift article{
-    width: 40%;
+    width: 60%;
 
     display: flex;
     flex-direction: column;
@@ -538,34 +695,50 @@ nav{
     gap: 15px;
 }
 
-#thrift article h2{
+#thrift article > h2{
     font-size: 50px;
     font-family: var(--texto_titulos);
     color: var(--color_titulos);
     text-align: center;
 }
 
-#thrift article ul{
-    width: 90%;
+#thrift article > ul{
+    width: 100%;
+    height: 200px;
+
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    flex-direction: row;
     align-items: center;
-    justify-content: left;
-    gap: 15px;
+    justify-content: start;
+    gap: 10px;
 }
 
-#thrift article ul li{
+#thrift article > ul > li{
+    width: 45%;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#thrift article > ul > li > span{
     color: var(--color_texto);
+    width: 10%;
+}
+
+
+#thrift article > ul > li > button{
+    all: unset;
+    cursor: pointer;
+    width: 90%;
+    color: white;
     font-family: var(--text_textos);
     font-size: 18px;
-    text-decoration: none;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    gap: 8px;
+    text-align: left;
+    color: var(--color_texto);
+
 }
 
 #thrift a{
@@ -656,7 +829,7 @@ nav{
 }
 
 #fourt article{
-    width: 40%;
+    width: 45%;
 
     display: flex;
     flex-direction: column;
@@ -665,34 +838,50 @@ nav{
     gap: 25px;
 }
 
-#fourt article h2{
+#fourt article > h2{
     font-size: 50px;
     font-family: var(--texto_titulos);
     color: var(--color_titulos);
     text-align: center;
 }
 
-#fourt article ul{
-    width: 90%;
+#fourt article > ul{
+    width: 100%;
+    height: 200px;
+
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    flex-direction: row;
     align-items: center;
-    justify-content: left;
-    gap: 15px;
+    justify-content: start;
+    gap: 10px;
 }
 
-#fourt article ul li{
+#fourt article > ul > li{
+    width: 45%;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fourt article > ul > li > span{
     color: var(--color_texto);
+    width: 10%;
+}
+
+
+#fourt article > ul > li > button{
+    all: unset;
+    cursor: pointer;
+    width: 90%;
+    color: white;
     font-family: var(--text_textos);
     font-size: 18px;
-    text-decoration: none;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    gap: 8px;
+    text-align: left;
+    color: var(--color_texto);
+
 }
 
 #fourt a{
@@ -825,199 +1014,24 @@ nav{
     box-shadow: 10px 10px 8px rgba(0, 0, 0, 40%);
 }
 
-/*sextaparte*/
-#six{
-    width: 100%;
-    padding: 30px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-}
-
-#six h2{
-    font-family: var(--texto_titulos);
-    font-size: 40px;
-    color: var(--color_titulos);
-    font-weight: 700;
-    text-align: center;
-}
-
-#six article{
-    width: 80%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-#six article button{
-    all: unset;
-    cursor: pointer;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-}
-
-#six article button img{
-    width: 50%;
-    transition: all 0.5s;
-}
-
-#six article button h3{
-    text-transform: capitalize;
-    font-family: var(--text_textos);
-    color: var(--color_texto);
-    font-size: 25px;
-    font-weight: 800;
-    text-align: center;
-}
-
-#six article button:hover img{
-    scale: 1.1;
-    filter: drop-shadow(10px 10px 8px rgba(0,0,0,30%));
-}
-
-#six article div:popover-open{
-    position: fixed;
-    margin: auto;
-    width: 60%;
-    padding: 20px;
-    border: none;
-    border-radius: 20px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-
-#six article div::backdrop{
-    background: rgba(0, 0, 0, 50%);
-    backdrop-filter: blur(5px);
-}
-
-#six article div h2{
-    font-size: 30px;
-    font-weight: 400;
-    text-align: center;
-}
-
-#six article div p{
-    width: 90%;
-    font-family: var(--text_textos);
-    color: black;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 800;
-}
-
-#six article div ul{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 10px;
-
-    max-height: 200px; /* 🔹 Ajusta la altura máxima visible */
-    overflow-y: auto;  /* 🔹 Activa scroll vertical */
-    padding-right: 10px; /* 🔹 Espacio para que no tape el scrollbar */
-    padding-left: 20px;  /* espacio para las viñetas */
-    list-style-type: disc; /* 🔹 Viñetas clásicas redondas */
-}
-
-#six article div ul li{
-    font-family: var(--text_textos);
-    color: var(--color_texto);
-    list-style: circle;
-    list-style-position: inside;
-}
-
-#six article div ul::-webkit-scrollbar {
-    width: 6px;
-}
-
-#six article div ul::-webkit-scrollbar-thumb {
-    background: var(--color_primari);
-    border-radius: 10px;
-}
-
-#six article div ul::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-
-#six article div button{
-    width: 40%;
-    padding: 8px 0;
-    background: var(--color_primari);
-    border-radius: 15px;
-    color: white;
-    font-family: var(--text_textos);
-    font-weight: 600;
-}
-
-#six .d-requisitos{
-    width: 80%;
-    padding: 8px 0;
-    background: var(--color_primari);
-    font-family: var(--text_textos);
-    color: white;
-    border-radius: 15px;
-    transition: 0.5s;
-}
-
-#six .d-requisitos:hover{
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 40%);
-}
-
-@media screen and (max-width:800px) {
-    #six article button img{
-        width: 90%;
-    }
-
-    #six article div:popover-open{
-        width: 90%;
+@media screen and (max-width:1100px){
+    #five article h2{
+        font-size: 40px;
     }
 }
-
-@media (max-width: 768px) {
-    #six article div ul {
-        max-height: 150px;
-    }
-}
-
 
 @media screen and (max-width:500px){
-    #six article button{
+    #five article{
+        width: 90%;
+    }
+    #five img{
         width: 90%;
     }
 
-    #six article button img{
-        width: 60%;
-    }
-
-    #six article div p{
-        width: 90%;
-        font-size: 14px;
-    }
-
-    #six article div ul li{
-        font-size: 14px;
+    #five{
+        flex-direction: column;
     }
 }
-
-
 
 
 

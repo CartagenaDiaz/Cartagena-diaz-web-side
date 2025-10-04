@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios fiscales personalizados para usted o su empresa.">
+    <title>Cartagena & Diaz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+  :root{
+    --header-bg:#f5f7fb;
+    --accent:#0f6efd;
+    --border:#e6e9ef;
+    --muted:#6b7280;
+    --bg:#ffffff;
+    --card-bg:#fafafa;
+    --price-bg:#eef5ff;
+    --radius:12px;
+    --gap:14px;
+    --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    font-family:var(--font);
+    margin:0;
+    background:var(--bg);
+    color:#111;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1{margin:0 auto;font-size:20px;text-align: center;}
+  h2{margin:0 auto;color:var(--accent);font-size:16px;width:100%;text-align: center;padding: 10px 0;}
+
+  .table-wrap{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:auto;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom:16px;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:640px; /* permite scroll horizontal en pantallas muy pequeñas si se desea */
+  }
+
+  thead tr{background:var(--header-bg)}
+  th, td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--border);
+    font-size:14px;
+    text-align:left;
+    vertical-align:middle;
+    word-break:break-word;
+  }
+  th{font-weight:600;color:var(--muted);font-size:13px}
+  .price{background:var(--price-bg);padding:6px 8px;border-radius:8px;font-weight:700;display:inline-block}
+
+  /* ---------------------------
+     MOBILE: transformar tabla en cards
+     --------------------------- */
+  @media (max-width:720px){
+    .table-wrap{ border:0; }
+    table{
+      width:100%;
+      min-width:0; /* importante: dejar que la tabla se adapte */
+      border:0;
+    }
+
+    /* ocultar la cabecera visualmente pero mantenerla accesible para lectores de pantalla */
+    thead{
+      position:absolute !important;
+      left:-9999px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
+    /* cada fila se convierte en bloque (card) */
+    tbody tr{
+      display:block;
+      margin:0 0 var(--gap) 0;
+      border:1px solid var(--border);
+      background:var(--card-bg);
+      padding:12px;
+      border-radius:10px;
+    }
+
+    /* cada celda se muestra horizontal: label ::before  |  valor (el contenido original) */
+    tbody tr td{
+      display:flex;
+      justify-content:space-between;
+      padding:8px 4px;
+      border-bottom:0;
+      align-items:flex-start;
+    }
+
+    /* ahí mostramos la etiqueta de columna (visual) delante del valor con ::before.
+       Usamos nth-child para evitar añadir atributos data-label en cada celda. */
+    tbody tr td::before{
+      content: attr(data-label); /* si hay data-label la usará; si no, la sobrescriben las reglas nth-child abajo */
+      font-weight:600;
+      color:var(--muted);
+      margin-right:12px;
+      width:40%;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      flex:0 0 40%;
+    }
+
+    /* fallback / override: etiquetas por posición de columna (si no usas data-label) */
+    tbody tr td:nth-child(1)::before { content: "Service"; }
+    tbody tr td:nth-child(2)::before { content: "Catégorie"; }
+    tbody tr td:nth-child(3)::before { content: "Prix"; }
+    tbody tr td:nth-child(4)::before { content: "Temps"; }
+
+    /* estilo del valor (lado derecho) */
+    tbody tr td > * {
+      flex:1 1 auto;
+      text-align:right;
+      min-width:36%;
+      overflow-wrap: anywhere;
+    }
+
+    /* estética adicional para el precio (si existe el span.price) */
+    tbody tr td span.price{ display:inline-block; text-align:right; }
+  }
+
+  /* impresión: mostrar tablas en layout tradicional */
+  @media print{
+    thead{position:static;left:auto}
+    tbody tr{display:table-row;border:0;padding:0}
+    table{min-width:0}
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../img/logo.png" alt="logito"></a>
+        <nav>
+            <label for="bt_menu" id="bt_open">
+                <span class="material-symbols-outlined">menu</span>
+            </label>
+
+            <input type="checkbox" name="" id="bt_menu">
+            <div class="navegacion">
+                <label for="bt_menu" id="bt_close">
+                    <span class="material-symbols-outlined">close</span>
+                </label>
+                <a href="../index.html" data-i18n="nav-inicio" >Inicio</a>
+                <a href="../pages/servicios.html" data-i18n="nav-servicio">Servicios</a>
+                <a href="../pages/about.html" data-i18n="nav-about">Acerca de</a>
+                <select name="" id="language-selector">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                    <option value="fr">FR</option>
+                </select>
+            </div>
+            <a href="https://site.booxi.com/luiscartagena?lang=fre" target="_blank" data-i18n="nav-contacto" class="bot_contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <h1>Prix de l'année <b class="price">2026</b></h1>
+
+  <!-- SERVICES PERSONELS -->
+<h2>SERVICES PERSONELS</h2>
+<div class="table-wrap" role="region" aria-label="Services personels">
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Catégorie</th><th>Prix</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Impôt/income tax pour personne salariée</td>
+        <td>Par personne</td>
+        <td><span class="price">90,00 $</span></td>
+      </tr>
+      <tr>
+        <td>Impôt/income tax personne salariée avec enfants monoparentale</td>
+        <td>-</td>
+        <td><span class="price">100,00 $</span></td>
+      </tr>
+      <tr>
+        <td>Impôt/income tax pour couple</td>
+        <td>-</td>
+        <td><span class="price">180,00 $</span></td>
+      </tr>
+      <tr>
+        <td>Impôt/income tax pour couple avec enfants</td>
+        <td>-</td>
+        <td><span class="price">190,00 $</span></td>
+      </tr>
+      <tr>
+        <td>DEMANDE Allocation famille</td>
+        <td>Par application</td>
+        <td><span class="price">250,00 $</span></td>
+      </tr>
+      <tr>
+        <td>Réactivation des allocation famille</td>
+        <td>Par application</td>
+        <td><span class="price">125,00 $</span></td>
+      </tr>
+      <tr>
+        <td>Taxe de bienvenue</td>
+        <td>Par application</td>
+        <td><span class="price">80,00 $</span></td>
+      </tr>
+      <tr>
+        <td>Impôts/income tax autonome</td>
+        <td>-</td>
+        <td><span class="price">200,00 $ +</span></td>
+      </tr>
+      <tr>
+        <td>Impôt/income tax incorporée</td>
+        <td>-</td>
+        <td><span class="price">500,00 $ +</span></td>
+      </tr>
+      <tr>
+        <td>Organisation de facturation</td>
+        <td>Extra</td>
+        <td><span class="price">50,00 $</span></td>
+      </tr>
+      <tr>
+        <td>Revenu de location</td>
+        <td>Extra</td>
+        <td><span class="price">100,00 $</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SERVICES DES COMPAGNIES -->
+<h2>SERVICES DES COMPAGNIES</h2>
+<div class="table-wrap" role="region" aria-label="Services des compagnies">
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Catégorie</th><th>Prix</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Déclaration des taxes trimestrielles d'entreprise</td>
+        <td>Par trimestre</td>
+        <td><span class="price">300,00 $</span></td>
+      </tr>
+      <tr><td>Conseil en création d'entreprise</td><td>-</td><td><span class="price">100,00 $</span></td></tr>
+      <tr><td>Création d'entreprise incorporée</td><td>-</td><td><span class="price">820,00 $</span></td></tr>
+      <tr><td>Création d'entreprise autonome</td><td>-</td><td><span class="price">250,00 $</span></td></tr>
+      <tr><td>D.A.S.</td><td>Par mois</td><td><span class="price">100,00 $</span></td></tr>
+      <tr><td>Production des états financiers</td><td>-</td><td><span class="price">500,00 $</span></td></tr>
+      <tr><td>Production du bilan</td><td>Par année</td><td><span class="price">500,00 $ +</span></td></tr>
+      <tr><td>Déclaration mise à jour annuelle de l'entreprise</td><td>Par année</td><td><span class="price">70,00 $</span></td></tr>
+      <tr><td>Production de facturation</td><td>Par facture</td><td><span class="price">25,00 $</span></td></tr>
+      <tr><td>Préparation de la feuille T4</td><td>Par employé / an</td><td><span class="price">50,00 $</span></td></tr>
+      <tr><td>Préparation de la Feuille RL1</td><td>Par employé / an</td><td><span class="price">50,00 $</span></td></tr>
+      <tr><td>Révision impôts antérieurs</td><td>Par année</td><td><span class="price">150,00 $ +</span></td></tr>
+      <tr><td>Demande de numéro TPS et TVQ</td><td>2 gouvernements</td><td><span class="price">80,00 $</span></td></tr>
+      <tr><td>Déclaration et production du RL 31</td><td>-</td><td><span class="price">65,00 $</span></td></tr>
+      <tr><td>Production de talon de paie</td><td>Par personne / paie</td><td><span class="price">20,00 $</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SERVICES VIRTUELS -->
+<h2>SERVICES VIRTUELS</h2>
+<div class="table-wrap" role="region" aria-label="Services virtuels">
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Catégorie</th><th>Prix</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Rendez-vous virtuel renseignement</td><td>Paiement à l'avance</td><td><span class="price">70,00 $</span></td></tr>
+      <tr><td>Rendez-vous virtuel à fin d'impôts</td><td>Selon déclaration</td><td><span class="price">Prix sur demande</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- AUTRES SERVICES -->
+<h2>AUTRES SERVICES</h2>
+<div class="table-wrap" role="region" aria-label="Autres services">
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Catégorie</th><th>Prix</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Renseignement sur les services présentiels</td><td>-</td><td><span class="price">70,00 $</span></td></tr>
+      <tr><td>Chômage</td><td>-</td><td><span class="price">70,00 $</span></td></tr>
+      <tr><td>Demande pour la taxe de bienvenue</td><td>-</td><td><span class="price">75,00 $</span></td></tr>
+      <tr><td>Appels divers gouvernement / miscellaneous calls</td><td>-</td><td><span class="price">70,00 $</span></td></tr>
+      <tr><td>Carte maladie</td><td>Par personne</td><td><span class="price">50,00 $ +</span></td></tr>
+      <tr><td>Demande de location logement</td><td>Par application</td><td><span class="price">70,00 $</span></td></tr>
+      <tr><td>Services divers / miscellaneous services</td><td>-</td><td><span class="price">40,00 $ +</span></td></tr>
+      <tr><td>Changement d'adresse</td><td>-</td><td><span class="price">40,00 $ +</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+  <footer>
+      <div class="infos">
+          <article class="mapa">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d698.0506395634008!2d-73.58953693044306!3d45.586472636740545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91ef209b6247d%3A0xecc33d4f78ce600b!2s5640%20Rue%20Jarry%20E%20%23204%2C%20Montreal%2C%20QC%20H1P%203J4!5e0!3m2!1ses!2sca!4v1756061439842!5m2!1ses!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </article>
+          <article>
+              <h3 data-i18n="footer-titulo1">DIRECCION</h3>
+              <p data-i18n="footer-j1">5640 rue Jarry Est Suite 204 Montréal QC H1P3J4</p>
+          </article>
+          <article>
+              <h3 data-i18n="footer-titulo2">CONTACTO</h3>
+              <a href="mailto:impots@luiscartagena.com">impots@luiscartagena.com</a>
+              <a href="tel:5145691884">+1 (514) 569-1884</a>
+          </article>
+          <article>
+              <h3 data-i18n="footer-titulo3">SIGUENOS</h3>
+              <div>
+                  <a href=""><img src="../img/footer/facebook.png" alt=""></a>
+                  <a href=""><img src="../img/footer/instagram.png" alt=""></a>
+                  <a href="https://api.whatsapp.com/send?phone=15145691884" target="_blank"><img src="../img/footer/whatsapp.png" alt=""></a>
+              </div>
+              <a href="../pages/bio.html#clausula" data-i18n="footer-termin">Reglamentos y Clausulas</a>
+              <a href="../pages/bio.html#historia" data-i18n="bio-sec1-h1">Nuestra historia</a>
+          </article>
+      </div>
+      <div class="copy">
+          <p data-i18n="footer-text"><b>© 2025 Cartagena & Diaz. Todos los derechos reservados.</b></p>
+          <p>Power By <a href="https://infoplanetjp.com" target="_blank">Infoplanet JP</a></p>
+      </div>
+  </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
