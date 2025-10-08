@@ -407,6 +407,18 @@ nav{
     }
 }
 
+/*baner info*/
+.info{
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--color_primari);
+    color: white;
+    font-family: var(--texto_titulos);
+    font-weight: 700;
+    display: none;
+}
+
 /*segunda parte*/
 
 #second{

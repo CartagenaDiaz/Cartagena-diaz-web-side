@@ -2,6 +2,8 @@ const selector = document.getElementById("language-selector");
 
 selector.addEventListener("change", () => {
   const lang = selector.value;
+  // Guardar preferencia en localStorage
+  localStorage.setItem('preferredLanguage', lang);
   loadLanguage(lang);
 });
 
@@ -20,9 +22,12 @@ function loadLanguage(lang) {
     });
 }
 
-// Cargar idioma por defecto
+// Cargar idioma por defecto o guardado
 window.addEventListener("DOMContentLoaded", () => {
-  const userLang = navigator.language.startsWith("en") ? "en" : "fr";
+  // Intentar cargar idioma guardado, si no existe usar detección del navegador
+  const savedLang = localStorage.getItem('preferredLanguage');
+  const userLang = savedLang || (navigator.language.startsWith("en") ? "en" : "fr");
+  
   selector.value = userLang;
   loadLanguage(userLang);
 });
