@@ -501,7 +501,7 @@ nav{
 
 /* diseño de precios */
 
-.price{background:var(--price-bg);padding:6px 8px;border-radius:8px;font-weight:700;display:inline-block}
+.price{background:var(--price-bg);padding:6px 8px;border-radius:8px;font-weight:700;}
 
 /* seccion del baner  */
 .baner:popover-open{
@@ -539,12 +539,21 @@ nav{
 /* #six article div */
 
 .baner p{
-    width: 90%;
     font-family: var(--text_textos);
     color: black;
     text-align: center;
     font-size: 18px;
     font-weight: 800;
+}
+
+.baner div{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: var(--text_textos);
 }
 
 .baner a{
