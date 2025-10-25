@@ -817,12 +817,14 @@ nav{
         font-size: 40px;
     }
 
-    #thrift article ul{
+    #thrift article > ul{
         width: 90%;
+        height: auto;
         flex-direction: column;
+        flex-wrap: nowrap;
     }
 
-    #thrift article ul li{
+    #thrift article > ul > li{
         width: 90%;
     }
 }
@@ -942,6 +944,7 @@ nav{
 
     #fourt article ul{
         width: 90%;
+        height: auto;
     }
 
     #fourt article ul li{
