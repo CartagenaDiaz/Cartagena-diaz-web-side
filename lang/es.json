@@ -25,8 +25,8 @@
     "serv-sec2-s1": "Impuesto para persona asalariada o pareja",
     "serv-sec2-s1-r1": "Ingresos laborales de todos los trabajos durante el año fiscal (T4 y Estado 1)",
     "serv-sec2-s1-r2": "Aportes al REER",
-    "serv-sec2-s1-r3": "Aportes al CEL",
-    "serv-sec2-s1-r4": "Retiros del REER o FERR (T4RSP y T4RIF)",
+    "serv-sec2-s1-r3": "Aportes al CELI (TFSA)",
+    "serv-sec2-s1-r4": "Retiros del REER o FERR(RIF) (T4RSP y T4RIF)",
     "serv-sec2-s1-r5": "Gastos médicos (dentista, medicamentos, lentes, etc.)",
     "serv-sec2-s1-r6": "Recibos de donaciones benéficas",
     "serv-sec2-s1-r7": "Información sobre la ocupación de una vivienda (Estado 31)",
@@ -287,5 +287,5 @@
     "footer-titulo3":"SIGUENOS",
     "footer-text": "© 2025 Cartagena & Diaz. Todos los derechos reservados.",
     "footer-termin": "Reglamentos y Clausulas",
-    "footer-j1": "5640 rue Jarry Est,Suite 204, St. Léonard, Québec, H1P 3J4."
+    "footer-j1": "5640 rue Jarry Est,Suite 204, St.Léonard, Québec, H1P 3J4."
 }

@@ -27,8 +27,8 @@
     "serv-sec2-s1": "Tax for Salaried Individuals or Couples",
     "serv-sec2-s1-r1": "Employment income from all jobs during the tax year (T4 and Slip 1)",
     "serv-sec2-s1-r2": "RRSP Contributions",
-    "serv-sec2-s1-r3": "CEL Contributions",
-    "serv-sec2-s1-r4": "RRSP or FERR Withdrawals (T4RSP and T4RIF)",
+    "serv-sec2-s1-r3": "CELI(TFSA) Contributions",
+    "serv-sec2-s1-r4": "RRSP or FERR(RIF) Withdrawals (T4RSP and T4RIF)",
     "serv-sec2-s1-r5": "Medical expenses (dentist, medications, glasses, etc.)",
     "serv-sec2-s1-r6": "Charitable donation receipts",
     "serv-sec2-s1-r7": "Home occupancy information (Slip 31)",
@@ -288,5 +288,5 @@
     "footer-titulo3":"FOLLOW US",
     "footer-text": "© 2025 Cartagena & Diaz. All rights reserved.",
     "footer-termin": "Regulations and Clauses",
-    "footer-j1": "5640 rue Jarry Est, Suite 204, St. Léonard, Québec, H1P 3J4."
+    "footer-j1": "5640 rue Jarry Est, Suite 204, St.Léonard, Québec, H1P 3J4."
 }
