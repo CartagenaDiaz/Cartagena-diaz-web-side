@@ -137,6 +137,7 @@ header > a{
 
 header a img{
     width: 100%;
+    max-width: 310px;
 }
 
 nav{
