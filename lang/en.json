@@ -27,8 +27,8 @@
     "serv-sec2-s1": "Tax for Salaried Individuals or Couples",
     "serv-sec2-s1-r1": "Employment income from all jobs during the tax year (T4 and Slip 1)",
     "serv-sec2-s1-r2": "RRSP Contributions",
-    "serv-sec2-s1-r3": "CELI(TFSA) Contributions",
-    "serv-sec2-s1-r4": "RRSP or FERR(RIF) Withdrawals (T4RSP and T4RIF)",
+    "serv-sec2-s1-r3": "TFSA Contributions",
+    "serv-sec2-s1-r4": "RIF Withdrawals T4RSP and T4RIF",
     "serv-sec2-s1-r5": "Medical expenses (dentist, medications, glasses, etc.)",
     "serv-sec2-s1-r6": "Charitable donation receipts",
     "serv-sec2-s1-r7": "Home occupancy information (Slip 31)",
@@ -45,7 +45,7 @@
     "serv-sec2-s2-r1": "Employment income from all jobs during the tax year (T4 and Slip 1)",
     "serv-sec2-s2-r2": "RRSP Contributions",
     "serv-sec2-s2-r3": "FHSA Contributions",
-    "serv-sec2-s2-r4": "RRSP or FERR Withdrawals (T4RSP and T4RIF)",
+    "serv-sec2-s2-r4": "RRSP or FERR (Registered Retirement Income Fund) Withdrawals (T4RSP and T4RIF)",
     "serv-sec2-s2-r5": "Medical expenses (dentist, medications, glasses, etc.)",
     "serv-sec2-s2-r6": "Charitable donation receipts",
     "serv-sec2-s2-r7": "Investment income (T5/Slip 3, T3/Slip 16, T5008/Slip 18)",
@@ -173,7 +173,7 @@
     "serv-sec4-s3-r4": "Banking information",
     "serv-sec4-s3-r5": "Medical certificate (if applicable)",
     "serv-sec4-s3-r6": "Proof of citizenship or legal status",
-    "serv-sec4-s4": "Welcome Tax (GST) application",
+    "serv-sec4-s4": "Welcome GST application",
     "serv-sec4-s4-r1": "Marriage certificate",
     "serv-sec4-s4-r2": "Identification document",
     "serv-sec4-s4-r3": "Social insurance",
@@ -288,5 +288,5 @@
     "footer-titulo3":"FOLLOW US",
     "footer-text": "© 2025 Cartagena & Diaz. All rights reserved.",
     "footer-termin": "Regulations and Clauses",
-    "footer-j1": "5640 rue Jarry Est, Suite 204, St.Léonard, Québec, H1P 3J4."
+    "footer-j1": "5640 rue Jarry Est, Suite 204, St.Léonard, Québec, H1P 3J4"
 }

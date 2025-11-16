@@ -25,8 +25,8 @@
     "serv-sec2-s1" : "Impôt sur le revenu pour personne salariée ou couple",
     "serv-sec2-s1-r1": "Revenus d'emploi de tous travail au cours de l'année d'imposition (T4 et Relevé 1)",
     "serv-sec2-s1-r2": "Cotisations REER",
-    "serv-sec2-s1-r3": "Cotisations CELI(TFSA)",
-    "serv-sec2-s1-r4": "Retraits REER ou FERR(RIF) (T4RSP et T4RIF)",
+    "serv-sec2-s1-r3": "Cotisations CELI",
+    "serv-sec2-s1-r4": "Retraits REER ou FERR",
     "serv-sec2-s1-r5": "Frais médicaux (dentiste, médicaments, lunettes, etc.)",
     "serv-sec2-s1-r6": "Reçus de dons de charité",
     "serv-sec2-s1-r7": "Renseignements sur l'occupation d'un logement (Relevé 31)",
@@ -289,5 +289,5 @@
     "footer-titulo3":"FOLLOW US",
     "footer-text": "© 2025 Cartagena & Diaz. All rights reserved.",
     "footer-termin": "Règlements et clauses",
-    "footer-j1": "5640 rue Jarry Est, Suite 204, St.Léonard, Québec, H1P 3J4."
+    "footer-j1": "5640 rue Jarry Est, Suite 204, St.Léonard, Québec, H1P 3J4"
 }
